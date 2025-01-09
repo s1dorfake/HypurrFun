@@ -1,5 +1,9 @@
 # HypurrFun
 
+**ALERT**
+
+https://app.hypurr.fun/launch/11893 IS NOT MY PROJECT
+
 A tool for interacting with hypurr.fun
 
 ## Overview
