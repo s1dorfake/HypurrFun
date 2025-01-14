@@ -3,13 +3,13 @@ package launchutils
 import (
 	"testing"
 
-	"github.com/s1dorfake/HypurrFun/pb"
+	hp "github.com/s1dorfake/HypurrFun/pb"
 	"github.com/test-go/testify/require"
 )
 
 func TestSortingFunctions(t *testing.T) {
 	// Create test data
-	launches := []*pb.HyperliquidLaunch{
+	launches := []*hp.HyperliquidLaunch{
 		{
 			LastEventTimestamp: 3,
 			ListedTimestamp:    1,
@@ -27,7 +27,7 @@ func TestSortingFunctions(t *testing.T) {
 	t.Run("SortByLastActivity", func(t *testing.T) {
 		t.Run("Ascending", func(t *testing.T) {
 			// Make a copy for testing
-			testLaunches := make([]*pb.HyperliquidLaunch, len(launches))
+			testLaunches := make([]*hp.HyperliquidLaunch, len(launches))
 			copy(testLaunches, launches)
 
 			sorted := SortByLastActivityAsc(testLaunches)
@@ -42,7 +42,7 @@ func TestSortingFunctions(t *testing.T) {
 		})
 
 		t.Run("Descending", func(t *testing.T) {
-			testLaunches := make([]*pb.HyperliquidLaunch, len(launches))
+			testLaunches := make([]*hp.HyperliquidLaunch, len(launches))
 			copy(testLaunches, launches)
 
 			sorted := SortByLastActivityDesc(testLaunches)
@@ -57,7 +57,7 @@ func TestSortingFunctions(t *testing.T) {
 
 	t.Run("SortByListedTimestamp", func(t *testing.T) {
 		t.Run("Ascending", func(t *testing.T) {
-			testLaunches := make([]*pb.HyperliquidLaunch, len(launches))
+			testLaunches := make([]*hp.HyperliquidLaunch, len(launches))
 			copy(testLaunches, launches)
 
 			sorted := SortByListedTimestampAsc(testLaunches)
@@ -70,7 +70,7 @@ func TestSortingFunctions(t *testing.T) {
 		})
 
 		t.Run("Descending", func(t *testing.T) {
-			testLaunches := make([]*pb.HyperliquidLaunch, len(launches))
+			testLaunches := make([]*hp.HyperliquidLaunch, len(launches))
 			copy(testLaunches, launches)
 
 			sorted := SortByListedTimestampDesc(testLaunches)
@@ -85,7 +85,7 @@ func TestSortingFunctions(t *testing.T) {
 
 	t.Run("GetSortedByLastActivity", func(t *testing.T) {
 		t.Run("Ascending", func(t *testing.T) {
-			original := make([]*pb.HyperliquidLaunch, len(launches))
+			original := make([]*hp.HyperliquidLaunch, len(launches))
 			copy(original, launches)
 
 			sorted := GetSortedByLastActivityAsc(original)
@@ -101,7 +101,7 @@ func TestSortingFunctions(t *testing.T) {
 		})
 
 		t.Run("Descending", func(t *testing.T) {
-			original := make([]*pb.HyperliquidLaunch, len(launches))
+			original := make([]*hp.HyperliquidLaunch, len(launches))
 			copy(original, launches)
 
 			sorted := GetSortedByLastActivityDesc(original)
@@ -117,7 +117,7 @@ func TestSortingFunctions(t *testing.T) {
 
 	t.Run("GetSortedByListedTimestamp", func(t *testing.T) {
 		t.Run("Ascending", func(t *testing.T) {
-			original := make([]*pb.HyperliquidLaunch, len(launches))
+			original := make([]*hp.HyperliquidLaunch, len(launches))
 			copy(original, launches)
 
 			sorted := GetSortedByListedTimestampAsc(original)
@@ -131,7 +131,7 @@ func TestSortingFunctions(t *testing.T) {
 		})
 
 		t.Run("Descending", func(t *testing.T) {
-			original := make([]*pb.HyperliquidLaunch, len(launches))
+			original := make([]*hp.HyperliquidLaunch, len(launches))
 			copy(original, launches)
 
 			sorted := GetSortedByListedTimestampDesc(original)
@@ -146,7 +146,7 @@ func TestSortingFunctions(t *testing.T) {
 	})
 
 	t.Run("Empty slice", func(t *testing.T) {
-		emptyLaunches := []*pb.HyperliquidLaunch{}
+		emptyLaunches := []*hp.HyperliquidLaunch{}
 
 		// Test all functions with empty slice
 		require.Empty(t, SortByLastActivityAsc(emptyLaunches))
@@ -160,7 +160,7 @@ func TestSortingFunctions(t *testing.T) {
 	})
 
 	t.Run("Single element", func(t *testing.T) {
-		singleLaunch := []*pb.HyperliquidLaunch{{
+		singleLaunch := []*hp.HyperliquidLaunch{{
 			LastEventTimestamp: 1,
 			ListedTimestamp:    1,
 		}}

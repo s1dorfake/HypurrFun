@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	launchutils "github.com/s1dorfake/HypurrFun/internal/launch_utils"
-	"github.com/s1dorfake/HypurrFun/pb"
+	hp "github.com/s1dorfake/HypurrFun/pb"
 	"github.com/stretchr/testify/require"
 )
 
@@ -27,7 +27,7 @@ func TestGetSessionInfo(t *testing.T) {
 	t.Run("nil session returns default", func(t *testing.T) {
 		// Create a launch with nil session
 		launch := &launchutils.LaunchExtended{
-			HyperliquidLaunch: &pb.HyperliquidLaunch{
+			HyperliquidLaunch: &hp.HyperliquidLaunch{
 				Session: nil,
 			},
 		}
@@ -47,14 +47,14 @@ func TestGetSessionInfo(t *testing.T) {
 
 	t.Run("valid session returns correct values", func(t *testing.T) {
 		// Create a launch with custom session values
-		customSession := &pb.HyperliquidWalletDeploySession{
+		customSession := &hp.HyperliquidWalletDeploySession{
 			FullName:       "Test Token",
 			TokenName:      "TST",
 			TokenSupply:    1000000,
 			StartMarketCap: 5000000,
 		}
 		launch := &launchutils.LaunchExtended{
-			HyperliquidLaunch: &pb.HyperliquidLaunch{
+			HyperliquidLaunch: &hp.HyperliquidLaunch{
 				Session: customSession,
 			},
 		}
@@ -76,7 +76,7 @@ func TestGetSessionInfo(t *testing.T) {
 func TestGetSessionInfoEdgeCases(t *testing.T) {
 	t.Run("empty session values", func(t *testing.T) {
 		// Test with empty string values but non-nil session
-		emptySession := &pb.HyperliquidWalletDeploySession{
+		emptySession := &hp.HyperliquidWalletDeploySession{
 			FullName:       "",
 			TokenName:      "",
 			TokenSupply:    0,
@@ -84,7 +84,7 @@ func TestGetSessionInfoEdgeCases(t *testing.T) {
 		}
 
 		launch := &launchutils.LaunchExtended{
-			HyperliquidLaunch: &pb.HyperliquidLaunch{
+			HyperliquidLaunch: &hp.HyperliquidLaunch{
 				Session: emptySession,
 			},
 		}

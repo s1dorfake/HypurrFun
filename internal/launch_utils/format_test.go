@@ -3,7 +3,7 @@ package launchutils
 import (
 	"testing"
 
-	"github.com/s1dorfake/HypurrFun/pb"
+	hp "github.com/s1dorfake/HypurrFun/pb"
 	"github.com/test-go/testify/require"
 )
 
@@ -15,13 +15,13 @@ func TestLaunchExtended_FormattedSupply(t *testing.T) {
 	}{
 		{
 			name:     "nil session",
-			launch:   LaunchExtended{HyperliquidLaunch: &pb.HyperliquidLaunch{}},
+			launch:   LaunchExtended{HyperliquidLaunch: &hp.HyperliquidLaunch{}},
 			expected: "Not Available",
 		},
 		{
 			name: "zero supply",
-			launch: LaunchExtended{HyperliquidLaunch: &pb.HyperliquidLaunch{
-				Session: &pb.HyperliquidWalletDeploySession{
+			launch: LaunchExtended{HyperliquidLaunch: &hp.HyperliquidLaunch{
+				Session: &hp.HyperliquidWalletDeploySession{
 					TokenSupply: 0,
 				},
 			}},
@@ -29,8 +29,8 @@ func TestLaunchExtended_FormattedSupply(t *testing.T) {
 		},
 		{
 			name: "regular number",
-			launch: LaunchExtended{HyperliquidLaunch: &pb.HyperliquidLaunch{
-				Session: &pb.HyperliquidWalletDeploySession{
+			launch: LaunchExtended{HyperliquidLaunch: &hp.HyperliquidLaunch{
+				Session: &hp.HyperliquidWalletDeploySession{
 					TokenSupply: 1234567,
 				},
 			}},

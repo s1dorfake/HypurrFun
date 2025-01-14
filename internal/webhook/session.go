@@ -2,14 +2,14 @@ package webhook
 
 import (
 	launchutils "github.com/s1dorfake/HypurrFun/internal/launch_utils"
-	"github.com/s1dorfake/HypurrFun/pb"
+	hp "github.com/s1dorfake/HypurrFun/pb"
 )
 
 const notAvailable string = "Not Available"
 
 // getDefaultSession returns a default session when none is provided
-func getDefaultSession() *pb.HyperliquidWalletDeploySession {
-	return &pb.HyperliquidWalletDeploySession{
+func getDefaultSession() *hp.HyperliquidWalletDeploySession {
+	return &hp.HyperliquidWalletDeploySession{
 		FullName:       notAvailable,
 		TokenName:      notAvailable,
 		TokenSupply:    0,
@@ -18,7 +18,7 @@ func getDefaultSession() *pb.HyperliquidWalletDeploySession {
 }
 
 // getSessionInfo safely extracts session information
-func getSessionInfo(launch *launchutils.LaunchExtended) *pb.HyperliquidWalletDeploySession {
+func getSessionInfo(launch *launchutils.LaunchExtended) *hp.HyperliquidWalletDeploySession {
 	if launch.Session == nil {
 		return getDefaultSession()
 	}

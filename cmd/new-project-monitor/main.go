@@ -10,7 +10,7 @@ import (
 	hypurrutils "github.com/s1dorfake/HypurrFun/hypurr_utils"
 	launchutils "github.com/s1dorfake/HypurrFun/internal/launch_utils"
 	"github.com/s1dorfake/HypurrFun/internal/webhook"
-	"github.com/s1dorfake/HypurrFun/pb"
+	hp "github.com/s1dorfake/HypurrFun/pb"
 	"google.golang.org/grpc"
 )
 
@@ -49,12 +49,12 @@ func initialize() {
 	}
 }
 
-func monitorNewLaunches(ctx context.Context, client pb.StaticClient) {
+func monitorNewLaunches(ctx context.Context, client hp.StaticClient) {
 	log.Println("Monitoring for new Hypurr.fun launches...")
 
 	// Create a function to establish the stream
-	establishStream := func() (grpc.ServerStreamingClient[pb.HyperliquidLaunchStreamResponse], error) {
-		return client.HyperliquidLaunchStream(ctx, &pb.HyperliquidLaunchStreamRequest{})
+	establishStream := func() (grpc.ServerStreamingClient[hp.HyperliquidLaunchStreamResponse], error) {
+		return client.HyperliquidLaunchStream(ctx, &hp.HyperliquidLaunchStreamRequest{})
 	}
 
 	// Create the stream

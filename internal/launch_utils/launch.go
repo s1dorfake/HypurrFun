@@ -3,20 +3,20 @@ package launchutils
 import (
 	"time"
 
-	"github.com/s1dorfake/HypurrFun/pb"
+	hp "github.com/s1dorfake/HypurrFun/pb"
 )
 
 const NotAvailble = "Not Available"
 
 // LaunchExtended extends the protobuf HyperliquidLaunch message with additional computed fields
 type LaunchExtended struct {
-	*pb.HyperliquidLaunch
+	*hp.HyperliquidLaunch
 	LaunchTime time.Time // Time the token was launched
 }
 
 // ToLaunchExtended converts a protobuf HyperliquidLaunch message to an extended launch struct
 // It handles the conversion of the Unix millisecond timestamp to a time.Time object
-func ToLaunchExtended(hl *pb.HyperliquidLaunch) *LaunchExtended {
+func ToLaunchExtended(hl *hp.HyperliquidLaunch) *LaunchExtended {
 	if hl == nil {
 		return &LaunchExtended{
 			HyperliquidLaunch: nil,
@@ -32,7 +32,7 @@ func ToLaunchExtended(hl *pb.HyperliquidLaunch) *LaunchExtended {
 
 // LaunchSlice represents a slice of HyperliquidLaunch pointers that can be sorted.
 // It implements the basic methods required by sort.Interface.
-type LaunchSlice []*pb.HyperliquidLaunch
+type LaunchSlice []*hp.HyperliquidLaunch
 
 // Len returns the length of the LaunchSlice.
 // This is part of sort.Interface implementation.

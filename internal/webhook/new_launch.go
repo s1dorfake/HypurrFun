@@ -8,7 +8,7 @@ import (
 
 	discordwebhook "github.com/Monumental-Shopping/go-discord-webhook"
 	launchutils "github.com/s1dorfake/HypurrFun/internal/launch_utils"
-	"github.com/s1dorfake/HypurrFun/pb"
+	hp "github.com/s1dorfake/HypurrFun/pb"
 )
 
 type newLaunchHelper struct{}
@@ -40,7 +40,7 @@ func (newLaunchHelper) setupWebhookBase(w discordwebhook.Webhook, launch *launch
 }
 
 // addSessionFields adds session-specific fields to the webhook
-func (n newLaunchHelper) addSessionFields(w discordwebhook.Webhook, l *launchutils.LaunchExtended, session *pb.HyperliquidWalletDeploySession) {
+func (n newLaunchHelper) addSessionFields(w discordwebhook.Webhook, l *launchutils.LaunchExtended, session *hp.HyperliquidWalletDeploySession) {
 	w.CreateField("Name", n.formatTokenName(session.FullName, session.TokenName), true)
 	w.CreateField("Supply", l.FormattedSupply(), true)
 	w.CreateField("Market Cap", strconv.FormatInt(int64(session.StartMarketCap), 10), true)

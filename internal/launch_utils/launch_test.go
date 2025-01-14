@@ -4,26 +4,26 @@ import (
 	"testing"
 	"time"
 
-	"github.com/s1dorfake/HypurrFun/pb"
+	hp "github.com/s1dorfake/HypurrFun/pb"
 	"github.com/test-go/testify/require"
 )
 
 func TestToLaunchExtended(t *testing.T) {
 	tests := []struct {
 		name         string
-		input        *pb.HyperliquidLaunch
+		input        *hp.HyperliquidLaunch
 		expectedTime time.Time
 	}{
 		{
 			name: "converts zero timestamp",
-			input: &pb.HyperliquidLaunch{
+			input: &hp.HyperliquidLaunch{
 				ListedTimestamp: 0,
 			},
 			expectedTime: time.Unix(0, 0).Local(),
 		},
 		{
 			name: "converts set timestamp",
-			input: &pb.HyperliquidLaunch{
+			input: &hp.HyperliquidLaunch{
 				ListedTimestamp: 1641024000000, // Saturday, January 1, 2022 8:00:00 UTC
 			},
 			expectedTime: time.Date(2022, time.January, 1, 8, 0, 0, 0, time.UTC).UTC(),
