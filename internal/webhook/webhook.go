@@ -4,9 +4,9 @@ import (
 	"errors"
 	"fmt"
 
-	envutils "github.com/Matthew17-21/HypurrFun/internal/env_utils"
-	launchutils "github.com/Matthew17-21/HypurrFun/internal/launch_utils"
 	discordwebhook "github.com/Monumental-Shopping/go-discord-webhook"
+	envutils "github.com/s1dorfake/HypurrFun/internal/env_utils"
+	launchutils "github.com/s1dorfake/HypurrFun/internal/launch_utils"
 )
 
 // Webhook constants

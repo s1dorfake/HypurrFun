@@ -6,9 +6,9 @@ import (
 	"strconv"
 	"time"
 
-	launchutils "github.com/Matthew17-21/HypurrFun/internal/launch_utils"
-	"github.com/Matthew17-21/HypurrFun/pb"
 	discordwebhook "github.com/Monumental-Shopping/go-discord-webhook"
+	launchutils "github.com/s1dorfake/HypurrFun/internal/launch_utils"
+	"github.com/s1dorfake/HypurrFun/pb"
 )
 
 type newLaunchHelper struct{}

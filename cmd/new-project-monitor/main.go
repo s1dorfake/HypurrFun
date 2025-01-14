@@ -6,11 +6,11 @@ import (
 	"log"
 	"time"
 
-	hypurrutils "github.com/Matthew17-21/HypurrFun/hypurr_utils"
-	launchutils "github.com/Matthew17-21/HypurrFun/internal/launch_utils"
-	"github.com/Matthew17-21/HypurrFun/internal/webhook"
-	"github.com/Matthew17-21/HypurrFun/pb"
 	"github.com/joho/godotenv"
+	hypurrutils "github.com/s1dorfake/HypurrFun/hypurr_utils"
+	launchutils "github.com/s1dorfake/HypurrFun/internal/launch_utils"
+	"github.com/s1dorfake/HypurrFun/internal/webhook"
+	"github.com/s1dorfake/HypurrFun/pb"
 	"google.golang.org/grpc"
 )
 

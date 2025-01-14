@@ -3,7 +3,7 @@ package hypurrutils
 import (
 	"fmt"
 
-	"github.com/Matthew17-21/HypurrFun/pb"
+	"github.com/s1dorfake/HypurrFun/pb"
 )
 
 // NewStaticClient creates a new gRPC client to communicate with Hypurr.fun's static servers

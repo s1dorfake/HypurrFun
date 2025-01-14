@@ -60,7 +60,7 @@ To use this library in your own Go program, simply follow these steps:
 1. Install the package:
 
 ```bash
-go get -u github.com/Matthew17-21/HypurrFun
+go get -u github.com/s1dorfake/HypurrFun
 ```
 
 2. Use in your code:
@@ -70,7 +70,7 @@ package main
 
 import (
   "log"
-  hypurrutils "github.com/Matthew17-21/HypurrFun/hypurr_utils"
+  hypurrutils "github.com/s1dorfake/HypurrFun/hypurr_utils"
 )
 
 func main() {

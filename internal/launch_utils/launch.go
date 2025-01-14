@@ -3,7 +3,7 @@ package launchutils
 import (
 	"time"
 
-	"github.com/Matthew17-21/HypurrFun/pb"
+	"github.com/s1dorfake/HypurrFun/pb"
 )
 
 const NotAvailble = "Not Available"

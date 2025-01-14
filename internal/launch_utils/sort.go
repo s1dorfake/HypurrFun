@@ -3,7 +3,7 @@ package launchutils
 import (
 	"sort"
 
-	"github.com/Matthew17-21/HypurrFun/pb"
+	"github.com/s1dorfake/HypurrFun/pb"
 )
 
 // SortByLastActivityAsc sorts the given launches by LastEventTimestamp in ascending order

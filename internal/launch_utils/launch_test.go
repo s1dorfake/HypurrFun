@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Matthew17-21/HypurrFun/pb"
+	"github.com/s1dorfake/HypurrFun/pb"
 	"github.com/test-go/testify/require"
 )
 

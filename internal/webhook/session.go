@@ -1,8 +1,8 @@
 package webhook
 
 import (
-	launchutils "github.com/Matthew17-21/HypurrFun/internal/launch_utils"
-	"github.com/Matthew17-21/HypurrFun/pb"
+	launchutils "github.com/s1dorfake/HypurrFun/internal/launch_utils"
+	"github.com/s1dorfake/HypurrFun/pb"
 )
 
 const notAvailable string = "Not Available"

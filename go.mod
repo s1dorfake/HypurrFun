@@ -1,4 +1,4 @@
-module github.com/Matthew17-21/HypurrFun
+module github.com/s1dorfake/HypurrFun
 
 go 1.22.2
 
